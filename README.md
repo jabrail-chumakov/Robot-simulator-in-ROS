@@ -16,10 +16,10 @@ After that, you should run files from downloaded repository:
 
 ```bash
 $ rosrun stage_ros stageros $(rospack find second_assignment)/world/my_world.world
-$ rosrun src regulator
-$ rosrun src controller
+$ rosrun second_assignment regulator
+$ rosrun second_assignment controller
 ```
-Note that `src` above should be changed on the folder name, where all of downloaded files from repository are stored on your computer. For example `assigment2/src/controller.cpp`, where assigment2 is the name of your folder in your catkin workspace.
+Note that `second_assignment` above should be changed on your folder name, where all of downloaded files from this repository are stored on your computer. For example `catkin_ws/src/second_assignment/src/controller.cpp`, where second_assignment is the name of your folder in your catkin workspace.
 
 
 Task objectives
@@ -46,11 +46,11 @@ information about the closest obstacles.
 Working principle of proposed solution
 -----------------------------
 
-The proposed solution is simple and efficient and works almost perfectly. The solution consists of 4 cases when the robot needs to complete a particular command.
+The proposed solution is simple and efficient and works almost perfectly. The solution consists of several cases when the robot needs to complete a particular command.
 
 ### Case 1 ###
 
-```If the robot is far away from the nearest golden token or angle to the nearest golden token is more than 90 degrees then the robot moves straight.```
+```We update our speed each time, meaning that our `new_speed` is equal to `old_speed + 0.25````
 
 ### Case 2 ###
 
