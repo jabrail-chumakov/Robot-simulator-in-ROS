@@ -29,7 +29,13 @@ Task objectives
 - We want to have a node for the control of the robot, and an additional node which interacts with the user to: `increase/decrease the speed` and `reset the robot’s position`
 - Everything should be done in cpp 
 
-### Motors ###
+### Controlling the robot ###
+- You should publish a velocity on the cmd_vel topic
+- You can use the /base_scan topic to get information about the surrounding environment.
+- In particular, the information about the distance of the obstacles is in the ranges vector.
+
+Hint: divide the ranges vector into subsections, and take the minimum value of each subsection. This will provide
+information about the closest obstacles. 
 
 
 Working principle of proposed solution
