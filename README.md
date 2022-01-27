@@ -25,12 +25,14 @@ Note that `second_assignment` above should be changed on your folder name, where
 Task objectives
 ---------
 ### Requirements ###
+
 - We can use ROS for controlling the robot
 - The robot is endowed with laser scanners
 - We want to have a node for the control of the robot, and an additional node which interacts with the user to: `increase/decrease the speed` and `reset the robot’s position`
 - Everything should be done in cpp 
 
 ### Controlling the robot ###
+
 - You should publish a velocity on the cmd_vel topic
 - You can use the /base_scan topic to get information about the surrounding environment.
 - In particular, the information about the distance of the obstacles is in the ranges vector.
@@ -39,6 +41,7 @@ Hint: divide the ranges vector into subsections, and take the minimum value of e
 information about the closest obstacles. 
 
 ### Additional specifications ###
+
 - The node controlling the robot should also implement the functionality for increasing/decreasing the speed
 - The UI node should constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
 - The robot may crash if the speed is increased too much. 
@@ -48,19 +51,23 @@ Working principle of proposed solution
 
 The proposed solution is simple and efficient and works almost perfectly. The solution consists of several cases when the robot needs to complete a particular command.
 
+### Control window ###
+
+- UP arrow key = move on 0.25 faster.
+- DOWN arrow key = move on 0.25 slower.
+- R or r buttons = place robot on initial position.
+- Q or q buttons = close program.
+- Other buttons are not recognizible
+
 ### Case 1 ###
 
-```We update our speed each time, meaning that our new_speed is equal to old_speed + 0.25```
+```We update our speed each time, meaning that our new_speed is equal to old_speed + 0.25. Besides that, we compare our new_speed with old_speed each time, in order to prevent it from going in reverse direction. For example if new_speed is negative, then it should stop, meaning that new_speed is equal to zero.```
 
 ### Case 2 ###
 
-```If the robot detects a silver token on the distance closer than 1.00, then the robot aligns relatively to silver token and moves towards it.```
-
-### Case 3 ###
-
 ```If the robot on a distance of 0.4 from the silver token, then the robot grabs it, rotates at 180 degrees, release this silver token and then the robot returns to its initial position where it was before grabbing.```
 
-### Case 4 ###
+### Case 3 ###
 
 ``` If the robot on the distance of 0.7 from the golden token and golden angle is less than 90 degrees or more than -90 degrees, then three possible outcomes may occur:```
 
