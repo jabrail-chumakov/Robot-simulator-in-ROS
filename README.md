@@ -62,14 +62,16 @@ The proposed solution is simple and efficient and works almost perfectly. The so
 ### Controller file ###
 
 - We update our speed each time, meaning that our `new_speed` is equal to `old_speed + 0.25`. Besides that, we compare our `new_speed` with `old_speed` each time, in order to prevent it from going in reverse direction. For example if `new_speed` is negative, then it should stop, meaning that `new_speed` is equal to zero.
+- Controller files calculates distance in 3 directions: in `front` of him, in `right` and `left` in order to calculate collision risk. Since robot has vision of 360 degress following restrictions was introduced. `Front` side is angle between `45 and `135`, `Left` side is angle between `0 and 45` and `Right` side is angle between `135 and 180`.
+- Taking into account above restrictions, if robot is too close to the borders `threshold = 0.7` and osbtacle is from the `left`, then it should turn to `right` direction. Similarly, if obstacle is from the `right` side, then it should turn to `left`.
 
-### Case 2 ###
+### Regulator file ###
 
-```If the robot on a distance of 0.4 from the silver token, then the robot grabs it, rotates at 180 degrees, release this silver token and then the robot returns to its initial position where it was before grabbing.```
+-
 
 ### Case 3 ###
 
-``` If the robot on the distance of 0.7 from the golden token and golden angle is less than 90 degrees or more than -90 degrees, then three possible outcomes may occur:```
+```If the robot on a distance of 0.4 from the silver token, then the robot grabs it, rotates at 180 degrees, release this silver token and then the robot returns to its initial position where it was before grabbing.```
 
 * `First outcome`: If the angle relative to the golden token is more or equal to 25 degrees, then the robot should turn left.
 * `Second outcome`: If the angle relative to the golden token is less or equal to -25 degrees, then the robot should turn right.
