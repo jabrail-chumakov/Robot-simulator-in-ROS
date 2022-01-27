@@ -6,7 +6,7 @@ This is a simple robot simulator in ROS, which should avoid collision with the b
 Installing
 ----------------------
 
-The simulator required a World map, which was provided by professor Carmine Recchiuto in the following [repository](https://github.com/CarmineD8/second_assignment). Besides that, user should type 'catkin_make' being in catkin workspace.
+The simulator required a World map, which was provided by professor Carmine Recchiuto in the following [repository](https://github.com/CarmineD8/second_assignment). Besides that, user should type `catkin_make` being in catkin workspace.
 
 Exercise
 -----------------------------
