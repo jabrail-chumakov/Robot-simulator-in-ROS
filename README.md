@@ -38,6 +38,10 @@ Task objectives
 Hint: divide the ranges vector into subsections, and take the minimum value of each subsection. This will provide
 information about the closest obstacles. 
 
+### Additional specifications ###
+- The node controlling the robot should also implement the functionality for increasing/decreasing the speed
+- The UI node should constantly wait for an input for the user, which can either ask to increment or decrement the velocity, or to put the robot in the initial position.
+- The robot may crash if the speed is increased too much. 
 
 Working principle of proposed solution
 -----------------------------
