@@ -67,31 +67,9 @@ The proposed solution is simple and efficient and works almost perfectly. The so
 
 ### Regulator file ###
 
--
-
-### Case 3 ###
-
-```If the robot on a distance of 0.4 from the silver token, then the robot grabs it, rotates at 180 degrees, release this silver token and then the robot returns to its initial position where it was before grabbing.```
-
-* `First outcome`: If the angle relative to the golden token is more or equal to 25 degrees, then the robot should turn left.
-* `Second outcome`: If the angle relative to the golden token is less or equal to -25 degrees, then the robot should turn right.
-* `Third outcome`: A special avoiding case is executed which checks where to turn depending on the closest golden token distance. Frequently it occurs when the robot drives to the corner of the road. In such a scenario robot turns to direction, where the distance to the closest golden box is larger in the range between 75 and 105 degrees.
+- This file is responbile for input commands. It uses `ncurses.h`, which allows to use arrow keys without waiting of pressing `Enter` from the user. Right after user presses `Up arrow key` or `Down arrow key`, robot will react and move with appropriate speed. The same thing is with `Q - quit` and `R - reset`. 
+- It publishes results of successful commands. If robot increases/decreases a speed, then it publishes it in the terminal.
 
 Flowchart
 -----------------------------
 ![flowchart](https://user-images.githubusercontent.com/67557966/141962747-017895b6-90b8-4a16-9245-ac5e221b2cce.jpg)
-
-Video demonstration
------------------------------
-
-Below you can watch a demonstration of this assignment:
-
-[<img src="https://user-images.githubusercontent.com/67557966/141862028-4c13ba55-2e97-415f-b7d4-bb2fb68122c1.jpg" width="80%">](https://www.youtube.com/watch?v=c6LJVWnKfDc)
-
-Drawbacks and possible improvements
------------------------------
-### First assumptions ###
-```While this solution works perfectly, on very rare occasions the robot may move in the clockwise direction. This is due to the fact that when a robot grabs and rotates the same silver token many times, the silver token may be placed right in the corner of the golden borders. After that when the robot turns, in its vision radius, the silver token will appear to be the closest available (since it will be in a radius of less than 1). However, this can be easily fixed by slightly reducing the view radius (angle) of the robot itself in the script.```
-
-### Second assumptions ###
-``` In another case, the robot can get to a sunken corner with golden tokens (imperfect corner where 1 golden token is missing). The script was executed for 1 hour, but in my case, the robot never collided into this area. Therefore, it's difficult to evaluate how the robot will behave in this scenario. However, it can be assumed that it all depends on the angle at which the robot will be to the nearest golden token or rely on the special avoiding case.```
