@@ -50,7 +50,7 @@ The proposed solution is simple and efficient and works almost perfectly. The so
 
 ### Case 1 ###
 
-```We update our speed each time, meaning that our `new_speed` is equal to `old_speed + 0.25````
+```We update our speed each time, meaning that our new_speed is equal to old_speed + 0.25```
 
 ### Case 2 ###
 
