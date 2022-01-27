@@ -61,7 +61,7 @@ The proposed solution is simple and efficient and works almost perfectly. The so
 
 ### Controller file ###
 
-- We update our speed each time, meaning that our new_speed is equal to old_speed + 0.25. Besides that, we compare our new_speed with old_speed each time, in order to prevent it from going in reverse direction. For example if new_speed is negative, then it should stop, meaning that new_speed is equal to zero.
+- We update our speed each time, meaning that our `new_speed` is equal to `old_speed + 0.25`. Besides that, we compare our `new_speed` with `old_speed` each time, in order to prevent it from going in reverse direction. For example if `new_speed` is negative, then it should stop, meaning that `new_speed` is equal to zero.
 
 ### Case 2 ###
 
