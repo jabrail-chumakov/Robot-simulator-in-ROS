@@ -24,12 +24,10 @@ Note that `src` above should be changed on the folder name, where all of downloa
 
 Task objectives
 ---------
-```bash
 - We can use ROS for controlling the robot
 - The robot is endowed with laser scanners
 - We want to have a node for the control of the robot, and an additional node which interacts with the user to: (1) increase/decrease the speed and (2) reset the robot’s position
 - Everything should be done in cpp 
-```
 
 ### Motors ###
 
