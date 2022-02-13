@@ -74,3 +74,7 @@ Flowchart
 -----------------------------
 ![frr drawio](https://user-images.githubusercontent.com/67557966/151433368-563f0cc9-dc46-4a5e-a2d3-be628b49247f.png)
 
+Possible improvements
+-----------------------------
+- In case if you will give to much acceleration to the robot and press `Reset` after that, acceleration will remain the same. For the future improvement, it will be better to reset acceleration as well, so robot will be placed at initial position with zero velocity and acceleration.
+- Pause feature can be implemeneted as well in case user wants to pause the process.
